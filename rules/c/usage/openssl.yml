@@ -1,0 +1,16 @@
+---
+# Basic rule to detect openssl library usage
+rules:
+  - id: c.crypto.openssl.openssl-usage
+    message: OpenSSL C library usage detected
+    severity: INFO
+    languages:
+      - c
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          library: OpenSSL
+    pattern-either:
+      - pattern-regex: '#include\s+["<].*openssl/.*[>"]'
