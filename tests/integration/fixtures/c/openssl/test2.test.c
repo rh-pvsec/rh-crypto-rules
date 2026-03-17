@@ -1,4 +1,4 @@
-// TEST-RULE: c.openssl.usage
+// TEST-RULE: c.crypto.openssl.openssl-usage
 // TEST-METADATA: library=OpenSSL
 
 #include "openssl/evp.h"
