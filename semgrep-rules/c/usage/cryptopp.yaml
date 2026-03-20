@@ -1,0 +1,19 @@
+---
+# Basic rule to detect crypto++ library usage
+rules:
+  - id: c.crypto.cryptopp.detect-import
+    message: Detected include of crypto++ library
+    severity: INFO
+    languages:
+      - c
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          library: Crypto++
+          assetType: algorithm
+          algorithmPrimitive: other
+    pattern-either:
+      - pattern-regex: '#include\s+["<].*cryptopp/.*[>"]'
+      - pattern-regex: '#include\s+["<].*crypto[+][+]/.*[>"]'
