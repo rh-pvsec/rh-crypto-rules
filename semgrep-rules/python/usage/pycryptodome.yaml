@@ -1,0 +1,22 @@
+---
+# Basic rule to detect pycryptodome library usage
+rules:
+  - id: python.crypto.pycryptodome.detect-import
+    message: Detected pycryptodome import
+    severity: INFO
+    languages:
+      - python
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          library: pycryptodome
+          assetType: algorithm
+          algorithmPrimitive: other
+    pattern-either:
+      - pattern-regex: 'import\s+Crypto[.].*'
+      - pattern-regex: 'from\s+Crypto\s+import\s+.*'
+      - pattern-regex: 'import\s+Crypto\s+as\s+.*'
+      - pattern-regex: 'from\s+Crypto[.].*'
+      - pattern-regex: 'import\s+Crypto($|\s+)'
