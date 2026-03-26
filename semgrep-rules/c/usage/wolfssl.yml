@@ -1,0 +1,20 @@
+
+---
+# Basic rule to detect WolfSSL library usage
+rules:
+  - id: c.crypto.wolfssl.detect-import
+    message: WolfSSL C library usage detected
+    severity: INFO
+    languages:
+      - c
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          library: WolfSSL
+          assetType: algorithm
+          algorithmPrimitive: other
+          algorithmFamily: other
+    pattern-either:
+      - pattern-regex: '#include\s+["<](?:[^/]+/)*wolfssl[/](?:[^/]+)\.h[>"]'
