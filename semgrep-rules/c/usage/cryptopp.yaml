@@ -14,6 +14,7 @@ rules:
           library: Crypto++
           assetType: algorithm
           algorithmPrimitive: other
+          algorithmFamily: other
     pattern-either:
       - pattern-regex: '#include\s+["<].*cryptopp/.*[>"]'
       - pattern-regex: '#include\s+["<].*crypto[+][+]/.*[>"]'
