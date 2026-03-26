@@ -1,0 +1,20 @@
+---
+# Basic rule to detect libgcrypt library usage
+rules:
+  - id: c.crypto.libgcrypt.detect-import
+    message: libgcrypt C library usage detected
+    severity: INFO
+    languages:
+      - c
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: other
+          algorithmFamily: other
+          library: libgcrypt
+          api: gcrypt.h
+    pattern-either:
+      - pattern-regex: '#include\s+["<](?:[^/]+/)*gcrypt\.h[>"]'
