@@ -1,0 +1,19 @@
+---
+# Basic rule to detect s2n-tls library usage
+rules:
+  - id: c.crypto.s2n.detect-import
+    message: s2n-tls C library usage detected
+    severity: INFO
+    languages:
+      - c
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: protocol
+          protocolType: tls
+          library: s2n-tls
+          api: s2n.h
+    pattern-either:
+      - pattern-regex: '#include\s+["<](?:[^/]+/)*s2n\.h[>"]'
