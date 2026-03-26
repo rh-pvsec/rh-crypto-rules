@@ -1,0 +1,19 @@
+---
+# Basic rule to detect BearSSL library usage
+rules:
+  - id: c.crypto.bearssl.detect-import
+    message: BearSSL C library usage detected
+    severity: INFO
+    languages:
+      - c
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          library: BearSSL
+          assetType: algorithm
+          algorithmPrimitive: other
+          algorithmFamily: other
+    pattern-either:
+      - pattern-regex: '#include\s+["<](?:[^/]+/)*bearssl\.h[>"]'
