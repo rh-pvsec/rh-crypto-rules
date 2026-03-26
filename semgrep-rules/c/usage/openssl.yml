@@ -11,6 +11,9 @@ rules:
         subcategory: cryptography
         confidence: HIGH
         crypto:
+          assetType: algorithm
+          algorithmPrimitive: other
+          algorithmFamily: other
           library: OpenSSL
     pattern-either:
       - pattern-regex: '#include\s+["<].*openssl/.*[>"]'
