@@ -1,0 +1,271 @@
+---
+rules:
+  - id: rust.crypto.rustcrypto.elliptic-curves-bignp256
+    message: Detected BIGN P-256 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'bignp256::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: P-256
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-bp256
+    message: Detected Brainpool P-256 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'bp256::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: P-256
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-bp384
+    message: Detected Brainpool P-384 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'bp384::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: P-384
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-ed448-goldilocks
+    message: Detected ED448-Goldilocks elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'ed448_goldilocks::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: ED448
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-hash2curve
+    message: Detected hash2curve elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'hash2curve::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: hash2curve
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-k256
+    message: Detected K-256 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'k256::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: K-256
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-p192
+    message: Detected NIST P-192 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'p192::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: P-192
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-p224
+    message: Detected NIST P-224 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'p224::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: P-224
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-p256
+    message: Detected NIST P-256 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'p256::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: P-256
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-p384
+    message: Detected NIST P-384 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'p384::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: P-384
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-p521
+    message: Detected NIST P-521 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'p521::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: P-521
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-primefield
+    message: Detected Generic Prime Field elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'primefield::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: primefield
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-primeorder
+    message: Detected Prime Order elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'primeorder::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: primeorder
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-sm2
+    message: Detected SM2 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'sm2::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: sm2
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.elliptic-curves-x448
+    message: Detected X448 elliptic curve usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'x448::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: elliptic-curves
+          algorithmName: x448
+          library: RustCrypto
