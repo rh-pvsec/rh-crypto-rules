@@ -1,0 +1,331 @@
+---
+rules:
+  - id: rust.crypto.rustcrypto.ml-kem
+    message: Detected Rustcrypto ML-KEM usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'ml_kem::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: kem
+          algorithmFamily: ML-KEM
+          algorithmName: ML-KEM
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.rsa
+    message: Detected Rustcrypto RSA usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'rsa::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: pke
+          algorithmFamily: RSAES-PKCS1
+          algorithmName: RSA-PKCS1-v1.5
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.pkcs1
+    message: Detected Rustcrypto PKCS1 usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'pkcs1::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: related-crypto-material
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.pkcs5
+    message: Detected Rustcrypto PKCS5 usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'pkcs5::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: related-crypto-material
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.pkcs8
+    message: Detected Rustcrypto PKCS8 usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'pkcs8::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: related-crypto-material
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.x509-cert
+    message: Detected Rustcrypto X.509 Certificate usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'x509_cert::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: certificate
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.dsa
+    message: Detected Rustcrypto DSA usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'dsa::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: DSA
+          algorithmName: DSA
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.ecdsa
+    message: Detected Rustcrypto ECDSA usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'ecdsa::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: ECDSA
+          algorithmName: ECDSA
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.ed25519
+    message: Detected Rustcrypto Ed25519 usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'ed25519::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: signature
+          algorithmFamily: EdDSA
+          algorithmName: Ed25519
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.blake2
+    message: Detected Rustcrypto Blake2 Hash usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'blake2::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: hash
+          algorithmFamily: BLAKE2
+          algorithmName: BLAKE2
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.sha2
+    message: Detected Rustcrypto SHA-2 Hash usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'sha2::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: hash
+          algorithmFamily: SHA-2
+          algorithmName: SHA-256
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.sha3
+    message: Detected Rustcrypto SHA-3 Hash usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'sha3::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: hash
+          algorithmFamily: SHA-3
+          algorithmName: SHA3-256
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.hmac
+    message: Detected Rustcrypto HMAC usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'hmac::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: mac
+          algorithmFamily: HMAC
+          algorithmName: HMAC
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.argon2
+    message: Detected Rustcrypto Argon2 usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'argon2::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: kdf
+          algorithmFamily: Argon2
+          algorithmName: Argon2
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.pbkdf2
+    message: Detected Rustcrypto PBKDF2 usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'pbkdf2::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: kdf
+          algorithmFamily: PBKDF2
+          algorithmName: PBKDF2
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.scrypt
+    message: Detected Rustcrypto scrypt usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'scrypt::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: kdf
+          algorithmFamily: scrypt
+          algorithmName: scrypt
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.aes-gcm
+    message: Detected Rustcrypto AES-GCM usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'aes_gcm::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: ae
+          algorithmFamily: AES
+          algorithmName: AES-GCM
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.aes-gcm-siv
+    message: Detected Rustcrypto AES-GCM-SIV usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'aes_gcm_siv::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: ae
+          algorithmFamily: AES
+          algorithmName: AES-GCM-SIV
+          library: RustCrypto
+
+  - id: rust.crypto.rustcrypto.chacha20poly1305
+    message: Detected Rustcrypto ChaCha20Poly1305 usage
+    severity: INFO
+    languages:
+      - rust
+    pattern-either:
+      - pattern-regex: 'chacha20poly1305::[^;]+'
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: ae
+          algorithmFamily: ChaCha20
+          algorithmName: ChaCha20-Poly1305
+          library: RustCrypto
