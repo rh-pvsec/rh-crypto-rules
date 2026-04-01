@@ -1,0 +1,20 @@
+---
+# Basic rule to detect webcrypto library usage
+rules:
+  - id: javascript.crypto.webcrypto.webcrypto-usage
+    message: Javascript WebCrypto library usage detected
+    severity: INFO
+    languages: [javascript, typescript]
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          library: WebCrypto
+          assetType: algorithm
+          algorithmFamily: other
+          algorithmPrimitive: other
+    pattern-either:
+      - pattern-regex: '\s+window[.]crypto[.]subtle[.].+[;]'
+      - pattern-regex: '(\s|=)globalThis[.]crypto'
+      - pattern-regex: '\s+require[(]['']node:crypto[''][)][.]webcrypto'
