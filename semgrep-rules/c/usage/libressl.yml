@@ -1,0 +1,23 @@
+
+---
+# Minimal ruleset to detect LibreSSL / libtls usage (OpenSSL-compatible includes
+# alone are ambiguous with OpenSSL and are not matched here).
+rules:
+  - id: c.crypto.libressl.detect-import
+    message: LibreSSL C library usage detected
+    severity: INFO
+    languages:
+      - c
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          library: LibreSSL
+          assetType: algorithm
+          algorithmPrimitive: other
+          algorithmFamily: other
+    pattern-either:
+      - pattern-regex: '#include\s+["<][^"<>]*libressl[^"<>]*[>"]'
+      - pattern-regex: '#include\s+["<](?:[^/"]+/)*tls\.h[>"]'
+      - pattern-regex: '\bLIBRESSL_VERSION_(?:NUMBER|TEXT)\b'
