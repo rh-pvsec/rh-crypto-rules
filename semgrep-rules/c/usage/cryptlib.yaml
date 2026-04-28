@@ -1,0 +1,17 @@
+rules:
+  - id: c.crypto.cryptlib.usage
+    message: Detected cryptlib usage
+    severity: INFO
+    languages:
+      - c
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: other
+          algorithmFamily: other
+          library: cryptlib
+    pattern-either:
+      - pattern-regex: '#include\s+["<][^">]*cryptlib[^">]*[>"]'

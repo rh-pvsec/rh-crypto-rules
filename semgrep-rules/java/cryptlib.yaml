@@ -1,0 +1,18 @@
+rules:
+  - id: java.crypto.cryptlib.usage
+    message: Detected cryptlib Java usage
+    severity: INFO
+    languages:
+      - java
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: other
+          algorithmFamily: other
+          library: cryptlib
+    pattern-either:
+      - pattern-regex: 'import\s+(?:static\s+)?cryptlib\.[^;]+;'
+      - pattern-regex: '(?<![A-Za-z0-9_$])cryptlib(?:\.[A-Za-z_$][A-Za-z0-9_$]*)+'
