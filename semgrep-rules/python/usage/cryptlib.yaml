@@ -1,0 +1,21 @@
+rules:
+  - id: python.crypto.cryptlib.usage
+    message: Detected cryptlib Python usage
+    severity: INFO
+    languages:
+      - python
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: algorithm
+          algorithmPrimitive: other
+          algorithmFamily: other
+          library: cryptlib
+    pattern-either:
+      - pattern-regex: 'import\s+cryptlib_py[.].*'
+      - pattern-regex: 'from\s+cryptlib_py\s+import\s+.*'
+      - pattern-regex: 'import\s+cryptlib_py\s+as\s+.*'
+      - pattern-regex: 'from\s+cryptlib_py[.].*'
+      - pattern-regex: 'import\s+cryptlib_py($|\s+)'
