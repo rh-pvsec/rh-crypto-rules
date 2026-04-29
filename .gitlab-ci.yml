@@ -15,3 +15,24 @@ crypto-metadata:
     - python3 -m pytest tests/test_crypto_metadata.py
   rules:
     - when: always
+
+unittests:
+    stage: test
+    extends: .runner-tags
+    image: images.paas.redhat.com/rcm-tools/rcm-tools-base:f42
+    variables:
+        GIT_SUBMODULE_STRATEGY: none
+    rules:
+        - when: always
+    before_script:
+        - dnf install -y make git pip python
+        - pip install semgrep pyyaml
+        - curl -fsSL https://raw.githubusercontent.com/opengrep/opengrep/main/install.sh | bash
+        - export PATH='/root/.opengrep/cli/latest':$PATH
+        - git config --global url."https://exd-guild-security:${SCANOSS_CRYPTO_RULES_TOKEN}@github.com/".insteadOf "git@github.com:"
+        - ls
+        - git submodule update --init --recursive
+        - cd crypto_rules && git checkout 09aefa07211a58b0a872d09b9f463a32414a140a && cd ..
+
+    script:
+        - make test
