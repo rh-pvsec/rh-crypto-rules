@@ -521,5 +521,8 @@ spec:
   workspaces:
   - name: git-auth
     secret:
-      secretName: '{{ git_auth_secret }}'
+       secretName: '{{ git_auth_secret }}'
+  - name: custom-ssh-workspace
+    secret:
+      secretName: rh-crypto-scanner-image-github-ssh-clone
 status: {}
