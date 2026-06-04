@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Overlay repo for custom rules that covers internal use cases and won't be accepted in upstream.
+Overlay repo with custom rules that covers internal use cases (those that won't be accepted in upstream).
 
 By now the main use case that aims to be faced here is to detect a library or framework usage.
 
