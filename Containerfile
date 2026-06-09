@@ -10,6 +10,7 @@ LABEL name="rh-crypto-rules" \
     io.k8s.tags="rh-crypto-rules" \
     summary="Overlay custom rules used to scan sources and detect cryptographic algorithms." \
     description="Overlay custom rules used to scan sources and detect cryptographic algorithms." \
+    io.k8s.description="Overlay custom rules used to scan sources and detect cryptographic algorithms." \
     maintainer="exd-guild-security@redhat.com" \
     distribution-scope="public" \
     url="https://gitlab.cee.redhat.com/security-guild/crypto-scanning/rh-crypto-rules" \
