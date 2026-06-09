@@ -15,5 +15,6 @@ LABEL name="rh-crypto-rules" \
     url="https://gitlab.cee.redhat.com/security-guild/crypto-scanning/rh-crypto-rules" \
     version="20260604" \
     release="1" \
+    license="MIT" \
     vendor="Red Hat, Inc."
 
