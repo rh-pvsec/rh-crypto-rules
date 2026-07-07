@@ -1,0 +1,21 @@
+---
+# Basic rule to detect rustls (RustTLS) library usage
+rules:
+  - id: rust.crypto.rustls.detect-import
+    message: rustls library usage detected
+    severity: INFO
+    languages:
+      - rust
+    metadata:
+        category: security
+        subcategory: cryptography
+        confidence: HIGH
+        crypto:
+          assetType: protocol
+          protocolType: tls
+          library: rustls
+          api: rustls
+    pattern-either:
+      - pattern-regex: 'use\s+rustls::'
+      - pattern-regex: 'use\s+rustls\s+as\s+'
+      - pattern-regex: 'extern\s+crate\s+rustls'
