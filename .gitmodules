@@ -1,6 +1,0 @@
-[submodule "Makefile"]
-	path = Makefile
-	url = git@github.com:scanoss/crypto_rules
-[submodule "crypto_rules"]
-	path = crypto_rules
-	url = git@github.com:scanoss/crypto_rules
