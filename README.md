@@ -10,4 +10,4 @@ The image with the semgrep-rules is being publicly pushed to <docker://quay.io/e
 
 The test framework for this repo was forked from <https://github.com/scanoss/open-crypto-rules.git>.
 
-This repository is enrolled in [Fullsend](https://github.com/fullsend-ai/fullsend) for automated issue triage, code generation, and review.
+This repository is enrolled in [Fullsend](https://github.com/fullsend-ai/fullsend) for automated issue triage, code generation, review, and pull request fixes.
